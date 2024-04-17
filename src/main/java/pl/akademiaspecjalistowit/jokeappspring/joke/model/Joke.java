@@ -16,8 +16,8 @@ public class Joke implements Serializable {
         this.category = category;
     }
 
-    private Joke(){
-
+    private Joke() {
+        this.id = UUID.randomUUID();
     }
 
     public String getCategory() {

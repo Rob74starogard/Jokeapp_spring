@@ -1,7 +1,13 @@
-package pl.akademiaspecjalistowit.jokeappspring.joke.service.provider;
+package pl.akademiaspecjalistowit.jokeappspring.joke.service.provider.exception;
 
-public class JokeDataProviderException extends RuntimeException{
+import pl.akademiaspecjalistowit.jokeappspring.joke.service.JokeServiceException;
+
+public class JokeDataProviderException extends JokeServiceException {
     public JokeDataProviderException(String message) {
         super(message);
+    }
+
+    public JokeDataProviderException(String message, Throwable cause) {
+        super(message, cause);
     }
 }

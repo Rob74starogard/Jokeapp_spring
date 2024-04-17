@@ -1,2 +1,6 @@
-package pl.akademiaspecjalistowit.jokeappspring.joke.model;public class Buba {
+package pl.akademiaspecjalistowit.jokeappspring.joke.model;
+
+public class Buba {
+
+    private String a;
 }

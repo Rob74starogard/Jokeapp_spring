@@ -2,11 +2,10 @@ package pl.akademiaspecjalistowit.jokeappspring.joke.service.provider;
 
 import java.util.List;
 import java.util.Random;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import pl.akademiaspecjalistowit.jokeappspring.joke.model.Joke;
 import pl.akademiaspecjalistowit.jokeappspring.joke.repository.JokeRepository;
+import pl.akademiaspecjalistowit.jokeappspring.joke.service.provider.exception.JokeDataProviderException;
 
 @Service
 public class JokeDataProvider implements JokeProvider {
@@ -31,6 +30,9 @@ public class JokeDataProvider implements JokeProvider {
         Random rand = new Random();
         List<Joke> jokesByCategory =
             getJokeRepository().getAllByCategory(category);
+        if (jokesByCategory.isEmpty()) {
+            throw new JokeDataProviderException("No joke for this category is available");
+        }
         return jokesByCategory.get(rand.nextInt(jokesByCategory.size()));
     }
 

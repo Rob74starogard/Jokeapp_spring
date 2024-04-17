@@ -1,11 +1,8 @@
 package pl.akademiaspecjalistowit.jokeappspring.joke.service;
 
 import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import pl.akademiaspecjalistowit.jokeappspring.joke.model.Joke;
-import pl.akademiaspecjalistowit.jokeappspring.joke.service.provider.JokeDataProvider;
 import pl.akademiaspecjalistowit.jokeappspring.joke.service.provider.JokeProvider;
 
 @Service
