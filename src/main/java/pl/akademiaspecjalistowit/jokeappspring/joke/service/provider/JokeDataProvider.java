@@ -2,6 +2,8 @@ package pl.akademiaspecjalistowit.jokeappspring.joke.service.provider;
 
 import java.util.List;
 import java.util.Random;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import pl.akademiaspecjalistowit.jokeappspring.joke.model.Joke;
 import pl.akademiaspecjalistowit.jokeappspring.joke.repository.JokeRepository;
