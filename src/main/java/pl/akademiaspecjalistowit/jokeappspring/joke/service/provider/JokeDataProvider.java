@@ -2,9 +2,11 @@ package pl.akademiaspecjalistowit.jokeappspring.joke.service.provider;
 
 import java.util.List;
 import java.util.Random;
+import org.springframework.stereotype.Service;
 import pl.akademiaspecjalistowit.jokeappspring.joke.model.Joke;
 import pl.akademiaspecjalistowit.jokeappspring.joke.repository.JokeRepository;
 
+@Service
 public class JokeDataProvider implements JokeProvider {
 
     private final List<JokeRepository> jokeRepositories;

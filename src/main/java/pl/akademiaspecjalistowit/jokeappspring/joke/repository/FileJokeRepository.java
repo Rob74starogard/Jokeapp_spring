@@ -8,13 +8,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import org.springframework.stereotype.Repository;
 import pl.akademiaspecjalistowit.jokeappspring.joke.model.Joke;
 
+@Repository
 public class FileJokeRepository implements JokeRepository {
 
     private final Map<String, List<Joke>> jokesWithCategories;
 
-    public FileJokeRepository(String pathToJokesFile) {
+    public FileJokeRepository() {
+        String pathToJokesFile = "src/main/resources/jokes.json";
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             jokesWithCategories =

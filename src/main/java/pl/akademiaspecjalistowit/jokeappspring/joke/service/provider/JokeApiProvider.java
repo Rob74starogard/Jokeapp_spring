@@ -7,10 +7,12 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import org.springframework.stereotype.Service;
 import pl.akademiaspecjalistowit.jokeappspring.joke.dto.JokeDto;
 import pl.akademiaspecjalistowit.jokeappspring.joke.mapper.JokeDtoMapper;
 import pl.akademiaspecjalistowit.jokeappspring.joke.model.Joke;
 
+@Service
 public class JokeApiProvider implements JokeProvider {
 
     private final HttpClient httpClient;
