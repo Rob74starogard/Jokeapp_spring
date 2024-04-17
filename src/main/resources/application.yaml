@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: JokeAppSpring
+
+jokes:
+  files:
+    pathToJokeFile: src/main/resources/jokes.json
+  externalApi:
+    urlToJokeApi: hhtps://sadadfasd
+
+

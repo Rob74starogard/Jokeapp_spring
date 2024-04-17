@@ -26,7 +26,7 @@ public class JokeApiProvider implements JokeProvider {
     public Joke getJoke() {
         HttpRequest request = HttpRequest.newBuilder()
             .GET()
-            .uri(URI.create("https://vwerwerwerwerev/jokedfdsfsdfsdf/Anycccc"))
+            .uri(URI.create("https://v2.jokeapi.dev/joke/Any"))
             .build();
         return getResponse(request);
     }

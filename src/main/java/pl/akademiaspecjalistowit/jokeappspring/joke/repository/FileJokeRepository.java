@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 import pl.akademiaspecjalistowit.jokeappspring.joke.model.Joke;
 
@@ -16,8 +17,7 @@ public class FileJokeRepository implements JokeRepository {
 
     private final Map<String, List<Joke>> jokesWithCategories;
 
-    public FileJokeRepository() {
-        String pathToJokesFile = "src/main/resources/jokes.json";
+    public FileJokeRepository(@Value("${jokes.files.pathToJokeFile}") String pathToJokesFile) {
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             jokesWithCategories =
@@ -34,7 +34,7 @@ public class FileJokeRepository implements JokeRepository {
     public List<Joke> getAllJokes() {
         return jokesWithCategories.entrySet()
             .stream()
-            .flatMap(e->e.getValue().stream())
+            .flatMap(e -> e.getValue().stream())
             .collect(Collectors.toList());
     }
 

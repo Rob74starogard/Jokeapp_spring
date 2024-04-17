@@ -18,7 +18,7 @@ class FileJokeRepositoryTest {
     @Test
     @Disabled
     void shouldReadJokeFromFile() {
-        FileJokeRepository fileJokeRepository = new FileJokeRepository();
+        FileJokeRepository fileJokeRepository = new FileJokeRepository("asdasda/asdasd/asdasd");
 
         //when
         List<Joke> allJokes = fileJokeRepository.getAllJokes();
