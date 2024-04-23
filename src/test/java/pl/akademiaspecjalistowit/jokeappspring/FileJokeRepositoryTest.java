@@ -10,6 +10,7 @@ import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Value;
 import pl.akademiaspecjalistowit.jokeappspring.joke.model.Joke;
 import pl.akademiaspecjalistowit.jokeappspring.joke.repository.FileJokeRepository;
 
@@ -18,7 +19,7 @@ class FileJokeRepositoryTest {
     @Test
     @Disabled
     void shouldReadJokeFromFile() {
-        FileJokeRepository fileJokeRepository = new FileJokeRepository("asdasda/asdasd/asdasd");
+        FileJokeRepository fileJokeRepository = new FileJokeRepository(@Value("${jokes.files.pathToJokeFile}"));
 
         //when
         List<Joke> allJokes = fileJokeRepository.getAllJokes();

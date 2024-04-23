@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 import pl.akademiaspecjalistowit.jokeappspring.joke.model.Joke;
@@ -17,8 +19,10 @@ public class FileJokeRepository implements JokeRepository {
 
     private final Map<String, List<Joke>> jokesWithCategories;
 
-    public FileJokeRepository(@Value("${jokes.files.pathToJokeFile}") String pathToJokesFile) {
-        ObjectMapper objectMapper = new ObjectMapper();
+    public FileJokeRepository(@Value("${jokes.files.pathToJokeFile}") String pathToJokesFile, @Autowired ObjectMapper objectMapper) {
+
+
+
         try {
             jokesWithCategories =
                 objectMapper.readValue(Paths.get(pathToJokesFile).toFile(), new TypeReference<List<Joke>>() {
